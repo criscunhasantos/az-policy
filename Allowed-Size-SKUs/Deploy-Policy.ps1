@@ -1,4 +1,4 @@
-#Requires -Modules Az.Account,Az.Resources
+#Requires -Modules Az.Accounts,Az.Resources
 
 Write-Host "STARTING..." -ForegroundColor Green
 
@@ -6,7 +6,7 @@ $definitionName = "cccc23c7-8427-4f53-ad12-b6a63eb452b3" # Builtin policy da MS
 $displayName = "Allowed virtual machine size SKUs"
 $assignmentName = "Allowed-Size-SKUs"
 $description = "Processor Security Standard"
-$parameterFile = ".\listOfAllowedSKUs" # Todos SKUs menos GPU e HPC
+$parameterFile = ".\listOfAllowedSKUs.json" # Todos SKUs menos GPU e HPC
 
 Update-AzConfig -DisplayBreakingChangeWarning $false
 

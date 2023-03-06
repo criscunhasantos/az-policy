@@ -1,4 +1,4 @@
-#Requires -Modules Az.Account,Az.Resources
+#Requires -Modules Az.Accounts,Az.Resources
 
 Write-Host "STARTING..." -ForegroundColor Green
 
