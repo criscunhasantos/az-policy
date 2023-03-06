@@ -20,11 +20,11 @@ if (-not (Get-Module Az.ResourceGraph -ListAvailable)) {
 }
 
 Write-Host ". Run Azure Resource Graph query" -ForegroundColor Yellow
-$CurrentlyUsedLocations = (Search-AzGraph -Query 'Resources | summarize count() by location | sort by location asc' -Subscription $subscription).location  | Where-Object { $_ -ne '' }
+, $CurrentlyUsedLocations = (Search-AzGraph -Query 'Resources | summarize count() by location | sort by location asc' -Subscription $subscription).location  | Where-Object { $_ -ne '' }
 
 $listOfAllowedLocations = [PSCustomObject]@{
     listOfAllowedLocations = [PSCustomObject]@{
-        value = , $CurrentlyUsedLocations
+        value = $CurrentlyUsedLocations
     }
 }
 $listOfAllowedLocations | ConvertTo-Json | Out-File $parameterFile -Encoding utf8 -Force
