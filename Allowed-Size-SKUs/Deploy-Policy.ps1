@@ -1,3 +1,5 @@
+#Requires -Modules Az.Account,Az.Resources
+
 Write-Host "STARTING..." -ForegroundColor Green
 
 $definitionName = "cccc23c7-8427-4f53-ad12-b6a63eb452b3" # Builtin policy da MS
